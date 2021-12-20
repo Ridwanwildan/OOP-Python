@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ultimate"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-20 03:49:11 PM"/>
+        <attribute name="created" value="VWx0aW1hdGU7REVTS1RPUC1RRFVRS1VKOzIwMjEtMTItMDk7MDg6MDg6MDkgQU07MzI0MA=="/>
+        <attribute name="edited" value="VWx0aW1hdGU7REVTS1RPUC1RRFVRS1VKOzIwMjEtMTItMjA7MDM6NDk6MTEgUE07ODszMzU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Nama" type="String" array="False" size=""/>
+            <declare name="NIM, NilaiTugas, NilaiUTS, NilaiUAS" type="Integer" array="False" size=""/>
+            <while expression="WhileTrue">
+                <input variable="Menu"/>
+                <if expression="Menu = &quot;T&quot;">
+                    <then>
+                        <call expression="DataTambah()"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="Menu = &quot;L&quot;">
+                    <then>
+                        <if expression="lengthNama [ i ] != 0">
+                            <then>
+                                <call expression="DataTampilkan ( )"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Tidak ada data&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="Menu = &quot;U&quot;">
+                    <then>
+                        <comment text="Masukkan nama yang akan diubah"/>
+                        <input variable="Nama"/>
+                        <call expression="DataUbah ( )"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Nama tidak ada&quot;" newline="True"/>
+                    </else>
+                </if>
+                <if expression="Menu = &quot;H&quot;">
+                    <then>
+                        <comment text="Masukkan nama yang akan dihapus"/>
+                        <input variable="Nama"/>
+                        <call expression="DataHapus ( )"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Nama tidak ada&quot;" newline="True"/>
+                    </else>
+                </if>
+                <if expression="Menu = &quot;K&quot;">
+                    <then>
+                        <call expression="break"/>
+                        <comment text="While = FALSE"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="Menu != &quot;L&quot; or Menu != &quot;T&quot; or Menu != &quot;U&quot; or Menu != &quot;H&quot; or Menu != &quot;K&quot;">
+                    <then>
+                        <output expression="&quot;Perintah yang diketik salah&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
